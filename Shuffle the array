@@ -1,0 +1,11 @@
+class Solution {
+public:
+    vector<int> shuffle(vector<int>& nums, int n) {
+        vector<int> result;
+        for (int i = 0; i < n; ++i) {
+            result.push_back(nums[i]);       // Add x_i from the first half
+            result.push_back(nums[i + n]);  // Add y_i from the second half
+        }
+        return result;
+    }
+};
