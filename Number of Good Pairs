@@ -1,0 +1,15 @@
+class Solution {
+public:
+    int numIdenticalPairs(vector<int>& nums) {
+        unordered_map<int, int> freqMap;
+        int count = 0;
+        
+        for (int num : nums) {
+            if (freqMap.count(num)) {
+                count += freqMap[num]; // Add the count of pairs formed with this number
+            }
+            freqMap[num]++; // Increment frequency
+        }
+        
+        return count;
+    }
